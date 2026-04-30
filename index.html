@@ -1,1 +1,138 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attivazione Voucher - Global Voucher Solutions</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f4f7f6;
+            --text: #333;
+        }
 
+        body {
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            border-top: 5px solid var(--primary);
+        }
+
+        .logo {
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .status-box {
+            background: #e8f4fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--accent);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #joke-content {
+            display: none;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #1a252f;
+        }
+
+        .error-text {
+            color: #c0392b;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">Global Voucher Solutions</div>
+    
+    <div id="loading-screen">
+        <h1>Verifica Voucher...</h1>
+        <div class="loader"></div>
+        <p>Sincronizzazione con il database biometrico in corso.</p>
+        <p style="font-size: 0.8rem; color: #888;">ID: GVP-9920-JAY-2026</p>
+    </div>
+
+    <div id="joke-content">
+        <h1 style="color: #c0392b;">⚠️ ACCESSO NEGATO</h1>
+        <div class="status-box">
+            Il sistema ha rilevato un'anomalia nei dati del beneficiario.
+        </div>
+        <p class="error-text">LOGICA NON TROVATA</p>
+<p>Veramente pensavi che una gift card stampata in bianco e nero nel 2026 contenesse un vero premio di valore?</p>
+        <hr>
+        <p><strong>Buon compleanno Jay!</strong></p>
+        <p style="font-size: 0.8rem;">(Il vero regalo lo trovi nella busta... se ti ricordi dove l'hai messa)</p>
+        <button class="btn" onclick="location.reload()">Riprova (inutile)</button>
+    </div>
+</div>
+
+<script>
+    // Simula un caricamento "serio" prima dello scherzo
+    setTimeout(function() {
+        document.getElementById('loading-screen').style.display = 'none';
+        document.getElementById('joke-content').style.display = 'block';
+    }, 4500); // 4.5 secondi di attesa per creare suspense
+</script>
+
+</body>
+</html>
